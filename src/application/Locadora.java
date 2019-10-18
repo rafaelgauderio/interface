@@ -10,6 +10,7 @@ import modelo.entidades.AluguelCarro;
 import modelo.entidades.Veiculo;
 import modelo.servicos.ServicosAluguel;
 import modelo.servicos.TaxaServicoBrazil;
+import modelo.servicos.TaxaServicoUSA;
 
 public class Locadora {
 	// função principal
@@ -34,7 +35,7 @@ public class Locadora {
 		System.out.print("Infome o preço por dia: ");
 		double precoPorDia=sc.nextDouble();
 		
-		ServicosAluguel servicoAluguel= new ServicosAluguel(precoPorDia, precoPorHora, new TaxaServicoBrazil());
+		ServicosAluguel servicoAluguel= new ServicosAluguel(precoPorDia, precoPorHora, new TaxaServicoUSA());
 		
 		//acessar o serivo de aluguel ,chamado a operacao notadepagamento com argumento carro
 		servicoAluguel.processoNotaPagamento(carro);

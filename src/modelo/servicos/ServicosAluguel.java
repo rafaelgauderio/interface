@@ -7,15 +7,15 @@ public class ServicosAluguel {
 	
 	private Double precoPorDia;
 	private Double precoPorHora;
-	//associacao com taxaServicoBrazil
+	//associacao com TaxaServico
 	
-	private TaxaServicoBrazil taxaServicobrazil;
+	private TaxaServico taxaServico;
 
-	public ServicosAluguel(Double precoPorDia, Double precoPorHora, TaxaServicoBrazil taxaServicobrazil) {
+	public ServicosAluguel(Double precoPorDia, Double precoPorHora, TaxaServico taxaServico) {
 		super();
 		this.precoPorDia = precoPorDia;
 		this.precoPorHora = precoPorHora;
-		this.taxaServicobrazil = taxaServicobrazil;
+		this.taxaServico = taxaServico;
 	}
 	
 	public void processoNotaPagamento(AluguelCarro aluguelCarro) {
@@ -31,7 +31,7 @@ public class ServicosAluguel {
 			pagamentobasico = Math.ceil(horas/24)*precoPorDia;
 		}
 		
-		double imposto = taxaServicobrazil.taxa(pagamentobasico);
+		double imposto = taxaServico.imposto(pagamentobasico);
 		//novo objeto de pagamento, associoado com Nota de pagamento de aluguel
 		aluguelCarro.setNotapagamento(new NotaPagamento(pagamentobasico, imposto));
 	}

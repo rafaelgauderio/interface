@@ -1,12 +1,12 @@
 package modelo.servicos;
 
-public class TaxaServicoBrazil implements TaxaServico {
+public class TaxaServicoUSA implements TaxaServico {
 
 	public double imposto(double valor) {
 		if (valor <= 100) {
-			return valor * 0.2;
+			return valor * 0.3;
 		} else {
-			return valor * 0.15;
+			return valor * 0.4;
 
 		}
 	}
